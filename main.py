@@ -5,39 +5,44 @@ root = tk.Tk()
 # make the boundery this size
 root.geometry("600x313")
 
+#idetify 
+button2 = tk.Frame(root,width=600, height=313)
+button = tk.Frame(root,width=600, height=313)
+wraith1 = tk.Frame(root,width=600, height=313)
+mirage1 = tk.Frame(root,width=600, height=313)
+#first frame 
 menu = ImageTk.PhotoImage(Image.open("apex_screen.jpg"))
-menuimage = tk.Label(root,image = menu)
+menuimage = tk.Label(button,image = menu)
 
+#pack
 menuimage.pack()
-#diffining frame
-beginimage = tk.Frame(root,width=600, height=313)
-quiz_page = tk.Frame(root,width=600, height=313)
 
 
-begin_image = ImageTk.PhotoImage(Image.open("button.png"))
-#to erase and put another baround image 
+#to erase or put images 
 def play():
-   menuimage.forget()
+   button.forget()
    play_button.destroy()
-   quiz_page.pack()
-
-
+   wraith1.pack()
+   mirage1.pack()
+  
 #button
-canvas1 = tk.Canvas(beginimage, width=50, height=50)
-play_button = tk.Button(text = "start the test", image = begin_image,command=play)
+apex_button = ImageTk.PhotoImage(Image.open("button.png"))
+canvas1 = tk.Canvas(button, width=50, height=50)
+play_button = tk.Button(text = "start the test", image = apex_button,command=play)
 play_button.configure(width=201)
 play_button_window = canvas1.create_window(30,40)
 
 play_button.place(x=90, y=200)
 print("running")
-beginimage.pack()
+button.pack()
 
 #next frame
-main = tk.PhotoImage(Image.open("writh.png"))
+wraith = ImageTk.PhotoImage(file = "writh.png")
 
-quiz1image = tk.Label(quiz_page,image = wraith)
-
+quiz_page = tk.Label(wraith1,image = wraith) 
+canvas = tk.Canvas(wraith1, width = 600, height = 313)
+canvas.pack(fill='both')
+canvas.create_image(298,158, image=wraith)
 
 quiz_page.pack()
-
-
+#---------------------------------------------------------------------------
