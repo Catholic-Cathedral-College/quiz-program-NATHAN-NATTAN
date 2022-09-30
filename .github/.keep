@@ -1,0 +1,80 @@
+def play2():
+   quiz_page.forget()
+   button2.destroy()
+   
+  
+#next frame
+wraith = ImageTk.PhotoImage(file = "writh.png")
+
+quiz_page = tk.Label(wraith1,image = wraith) 
+canvas = tk.Canvas(wraith1, width = 600, height = 313)
+canvas.pack(fill='both')
+canvas.create_image(298,158, image=wraith)
+
+Q1_button = ImageTk.PhotoImage(Image.open("Q_button.png"))
+canvas2 = tk.Button(wraith1, width=50, height=50)
+Q1 = tk.Button(wraith1,text = "start the test", image = Q1_button,command=play2)
+Q1.configure(width=201)
+Q1_window = canvas2.create_window(30,40)
+
+Q1.place(x=0, y=0)
+wraith1.pack()
+
+
+
+
+------------------------------------------------------------------------------------
+
+
+
+
+#center of the GUI
+root = tk.Tk()
+# make the boundery this size
+root.geometry("600x313")
+
+#idetify 
+
+fisrt_image = tk.Frame(root,width=600, height=313)
+wraith1 = tk.Frame(root,width=600, height=313)
+
+#first frame 
+menu = ImageTk.PhotoImage(Image.open("apex_screen.jpg"))
+menuimage = tk.Label(fisrt_image,image = menu)
+
+#pack
+menuimage.pack()
+
+
+#to erase or put images 
+def play():
+   fisrt_image.forget()
+   play_button.destroy()
+   wraith1.pack()
+
+
+
+#BUTTON----------BUTTON----------BUTTON----------BUTTON----------BUTTON--------
+apex_button = ImageTk.PhotoImage(Image.open("button.png"))
+canvas1 = tk.Canvas(fisrt_image, width=50, height=50)
+play_button = tk.Button(text = "start the test", image = apex_button,command=play)
+play_button.configure(width=201)
+play_button_window = canvas1.create_window(30,40)
+
+play_button.place(x=90, y=200)
+print("running")
+fisrt_image.pack()
+
+#NEXT------------FRAME------------NEXT------------FRAME----------NEXT----------
+wraith = ImageTk.PhotoImage(file = "writh.png")
+
+quiz_page = tk.Label(wraith1,image = wraith) 
+canvas = tk.Canvas(wraith1, width = 600, height = 313)
+canvas.pack(fill='both')
+canvas.create_image(298,158, image=wraith)
+
+wraith = ImageTk.PhotoImage(file="writh.png")
+quiz_page = tk.Label(WRAITH, image=wraith)
+canvas = tk.Canvas(WRAITH, width=600, height=313)
+canvas.pack(fill='both')
+canvas.create_image(298, 158, image=wraith)
